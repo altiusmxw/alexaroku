@@ -1,4 +1,4 @@
-var APP_ID = "amzn1.ask.skill.f234023084808234234a08ed94324324723423"; //replace this with your app ID to make use of APP_ID verification
+var APP_ID = "amzn1.ask.skill.8b049a52-2845-4d3b-9260-77ce68685878"; //replace this with your app ID to make use of APP_ID verification
 
 var AlexaSkill = require("./AlexaSkill");
 var serverinfo = require("./serverinfo");
@@ -89,6 +89,16 @@ AlexaRoku.prototype.intentHandlers = {
     Netflix: function (intent, session, response) {
 		sendCommand("/roku/netflix",null,function() {
 			response.tellWithCard("Launching Netflix");
+		});
+    },
+    Sling: function (intent, session, response) {
+		sendCommand("/roku/sling",null,function() {
+			response.tellWithCard("Launching Sling");
+		});
+    },
+    Tablo: function (intent, session, response) {
+		sendCommand("/roku/tablo",null,function() {
+			response.tellWithCard("Launching Tablo");
 		});
     },
     HBO: function (intent, session, response) {
